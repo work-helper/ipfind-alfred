@@ -18,10 +18,15 @@ def findNetIp(ip=''):
 
 # 获取本地ip信息
 def findLocalIp():
+    global s
     hostname = socket.gethostname()
-    ip = socket.gethostbyname(hostname)
-    return hostname, ip
-
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(('114.114.114.114', 80))
+        ip = s.getsockname()[0]
+        return hostname, ip
+    finally:
+        s.close()
 
 if __name__ == '__main__':
     argLength = len(sys.argv)
