@@ -38,7 +38,7 @@ if __name__ == '__main__':
 {
     "items": [{
         "uid": "1",
-        "title": "LocalHost  -->  $localIp",
+        "title": "Local  -->  $localIp",
         "subtitle": "$localHostname",
         "arg": "$localIp",
         "icon": {
@@ -47,7 +47,7 @@ if __name__ == '__main__':
     },
     {
         "uid": "2",
-        "title": "NetHost  -->  $netIp",
+        "title": "Net  -->  $netIp",
         "subtitle": "$netHostname",
         "arg": "$netIp",
         "icon": {
