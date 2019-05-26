@@ -2,6 +2,7 @@
 import json
 import socket
 import string
+import struct
 import sys
 import urllib.request
 
@@ -33,6 +34,9 @@ if __name__ == '__main__':
     ip = ''
     if argLength != 1:
         ip = sys.argv[1]
+        if '.' not in ip:
+            ip = socket.inet_ntoa(struct.pack(">L", int(ip,16)))
+
 
     result = '''
 {
